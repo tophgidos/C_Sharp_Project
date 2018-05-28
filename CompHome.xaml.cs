@@ -6,60 +6,11 @@ using System.Windows.Controls;
 
 namespace Employees
 {
-    public class Employee
-    {
-        static int NextId = 1;
-        public int Id { get; }
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Name { get { return FirstName + " " + LastName; } }
-        public virtual string Role { get { return GetType().ToString().Substring(10); } }
-
-        public Employee() { }
-        public Employee(string firstName, string lastName)
-        {
-            Id = Employee.NextId++;
-            FirstName = firstName;
-            LastName = lastName;
-        }
-
-        public virtual void GetSpareProp1(ref string name, ref string value) { }
-    }
-
-    public class Executive : Employee
-    {
-        public string Title { get; } = "VP";
-        public int StockOptions { get; } = 100;
-
-        public Executive() { }
-        public Executive(string firstName, string lastName, string title, int stockOptions)
-            : base(firstName, lastName)
-        {
-            Title = title;
-            StockOptions = stockOptions;
-        }
-
-        public override string Role { get { return base.Role + ", " + Title; } }
-        public override void GetSpareProp1(ref string name, ref string value)
-        {
-            name = "Stock Options:";
-            value = string.Format("{0:N0}", StockOptions);
-        }
-    }
-
-    public class EmployeeList : List<Employee>
-    {
-        public EmployeeList()
-        {
-            Add(new Executive("Jane", "Doe", "CEO", 10000));
-            Add(new Employee("Bob", "Smith"));
-            Add(new Employee("Mike", "Miller"));
-        }
-    }
+    
 
     public partial class CompHome : Page
     {
-        static EmployeeList empList = new EmployeeList();
+        static List<Employee> empList = Program.LoadEmployees();
 
         public CompHome()
         {
