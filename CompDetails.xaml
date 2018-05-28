@@ -15,7 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-<!-- Testing Comment -->
+
         <!-- Add image in top left corner of grid-->
         <Image Style="{StaticResource WatermarkImage}" Grid.Column="0" Height="156" Grid.RowSpan="3" Width="181" Grid.ColumnSpan="1" />
 
