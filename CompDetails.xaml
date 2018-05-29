@@ -69,18 +69,16 @@
             <Label Content="Benefits:" Grid.Column="0" Grid.Row="7" Style="{StaticResource labelStyle}"/>
             <Label Content="{Binding Benefits}" Grid.Column="1" Grid.Row="7" Style="{StaticResource labelStyle}"/>
 
-            <!-- Stock Options -->
-            <Label Content="Stock options:" Grid.Column="0" Grid.Row="8" Style="{StaticResource labelStyle}" Visibility="Hidden"/>
-            <Label Content="{Binding StockOptions}" Grid.Column="1" Grid.Row="8" Style="{StaticResource labelStyle}" Visibility="Hidden"/>
-
-            <!-- Reports -->
-            <Label Content="Reports:" Grid.Column="0" Grid.Row="9" Style="{StaticResource labelStyle}"  Visibility="Hidden"/>
-            <Label Content="{Binding Reports}" Grid.Column="1" Grid.Row="9" Style="{StaticResource labelStyle}"  Visibility="Hidden"/>
-            
+                        
             <!-- Spare1 -->
-            <Label Name="SpareProp1Name" Content="Spare1:" Grid.Column="0" Grid.Row="4" Style="{StaticResource labelStyle}" Visibility="Hidden" />
-            <Label Name="SpareProp1Value" Content="{Binding Reports}" Grid.Column="1" Grid.Row="4" Style="{StaticResource labelStyle}" Visibility="Hidden" />
+            <Label Name="SpareProp1Name" Content="SpareProp1Name:" Grid.Column="0" Grid.Row="8" Style="{StaticResource labelStyle}" Visibility="Hidden" />
+            <Label Name="SpareProp1Value" Content="SpareProp1Value" Grid.Column="1" Grid.Row="8" Style="{StaticResource labelStyle}" Visibility="Hidden" />
             
+            <!-- Spare2 -->
+            <Label Name="SpareProp2Name" Content="SpareProp1Name:" Grid.Column="0" Grid.Row="9" Style="{StaticResource labelStyle}" Visibility="Hidden" />
+            <Label Name="SpareProp2Value" Content="SpareProp1Value" Grid.Column="1" Grid.Row="9" Style="{StaticResource labelStyle}" Visibility="Hidden" />
+
+          
         </Grid>
     </Grid>
 </Page>
