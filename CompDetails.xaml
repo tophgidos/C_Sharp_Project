@@ -30,6 +30,10 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
 
@@ -48,6 +52,30 @@
             <Label Content="Id:" Grid.Column="0" Grid.Row="3" Style="{StaticResource labelStyle}"/>
             <Label Content="{Binding Id}" Grid.Column="1" Grid.Row="3" Style="{StaticResource labelStyle}"/>
 
+            <!-- DOB -->
+            <Label Content="DOB:" Grid.Column="0" Grid.Row="4" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding DOB}" Grid.Column="1" Grid.Row="4" Style="{StaticResource labelStyle}"/>
+
+            <!-- Age -->
+            <Label Content="Age:" Grid.Column="0" Grid.Row="5" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding Age}" Grid.Column="1" Grid.Row="5" Style="{StaticResource labelStyle}"/>
+
+            <!-- SSN -->
+            <Label Content="SSN:" Grid.Column="0" Grid.Row="6" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding SSN}" Grid.Column="1" Grid.Row="6" Style="{StaticResource labelStyle}"/>
+
+            <!-- Benefits -->
+            <Label Content="Benefits:" Grid.Column="0" Grid.Row="7" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding Id}" Grid.Column="1" Grid.Row="7" Style="{StaticResource labelStyle}"/>
+
+            <!-- Stock Options -->
+            <Label Content="Stock options:" Grid.Column="0" Grid.Row="8" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding StockOptions}" Grid.Column="1" Grid.Row="8" Style="{StaticResource labelStyle}"/>
+
+            <!-- Reports -->
+            <Label Content="Reports:" Grid.Column="0" Grid.Row="9" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding Reports}" Grid.Column="1" Grid.Row="9" Style="{StaticResource labelStyle}"/>
+            
             <!-- Spare1 -->
             <Label Name="SpareProp1Name" Content="Spare1:" Grid.Column="0" Grid.Row="4" Style="{StaticResource labelStyle}" Visibility="Hidden" />
             <Label Name="SpareProp1Value" Content="" Grid.Column="1" Grid.Row="4" Style="{StaticResource labelStyle}" Visibility="Hidden" />
