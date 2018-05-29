@@ -29,7 +29,9 @@
         <!-- Employee type list box-->
         <ListBox Name="EmployeeTypeRadioButtons" Grid.Column="1" Grid.Row="1" Style="{StaticResource HorizontalRadioList}">
             <ListBoxItem Style="{StaticResource HorizontalRadio}" Margin="0,5,0,0"  MinWidth="50" Content="All" />
-            <ListBoxItem Style="{StaticResource HorizontalRadio}"  MinWidth="75" Content="Executives" />
+            <ListBoxItem Style="{StaticResource HorizontalRadio}"  MinWidth="75" Content="Managers" />
+            <ListBoxItem Style="{StaticResource HorizontalRadio}"  MinWidth="50" Content="Sales" />
+            <ListBoxItem Style="{StaticResource HorizontalRadio}"  MinWidth="50" Content="Other" />
         </ListBox>
 
         <!-- Data grid for list of Employees in left side of grid-->
@@ -39,6 +41,7 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" MinWidth="45" IsReadOnly="True"/>
                 <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" MinWidth="80" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" MinWidth="80" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Role}" MinWidth="85" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 

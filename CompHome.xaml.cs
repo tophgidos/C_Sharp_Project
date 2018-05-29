@@ -6,60 +6,11 @@ using System.Windows.Controls;
 
 namespace Employees
 {
-    public class Employee
-    {
-        static int NextId = 1;
-        public int Id { get; }
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Name { get { return FirstName + " " + LastName; } }
-        public virtual string Role { get { return GetType().ToString().Substring(10); } }
-
-        public Employee() { }
-        public Employee(string firstName, string lastName)
-        {
-            Id = Employee.NextId++;
-            FirstName = firstName;
-            LastName = lastName;
-        }
-
-        public virtual void GetSpareProp1(ref string name, ref string value) { }
-    }
-
-    public class Executive : Employee
-    {
-        public string Title { get; } = "VP";
-        public int StockOptions { get; } = 100;
-
-        public Executive() { }
-        public Executive(string firstName, string lastName, string title, int stockOptions)
-            : base(firstName, lastName)
-        {
-            Title = title;
-            StockOptions = stockOptions;
-        }
-
-        public override string Role { get { return base.Role + ", " + Title; } }
-        public override void GetSpareProp1(ref string name, ref string value)
-        {
-            name = "Stock Options:";
-            value = string.Format("{0:N0}", StockOptions);
-        }
-    }
-
-    public class EmployeeList : List<Employee>
-    {
-        public EmployeeList()
-        {
-            Add(new Executive("Jane", "Doe", "CEO", 10000));
-            Add(new Employee("Bob", "Smith"));
-            Add(new Employee("Mike", "Miller"));
-        }
-    }
+    
 
     public partial class CompHome : Page
     {
-        static EmployeeList empList = new EmployeeList();
+        static List<Employee> empList = Program.LoadEmployees();
 
         public CompHome()
         {
@@ -93,10 +44,41 @@ namespace Employees
         // Handle changes to Employee type radio buttons
         void EmployeeTypeRadioButtons_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Only choices are All (0) or Executives (1)
-            if (this.EmployeeTypeRadioButtons.SelectedIndex == 1)
-              dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Executive); 
-            else dgEmps.ItemsSource = empList;
+            // Only choices are All (0) Managers (1) Sales (2) or Other (3)
+            switch(this.EmployeeTypeRadioButtons.SelectedIndex) {
+            case 1:
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Executive);
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Manager);
+                break;
+            case 2:
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is PTSalesPerson);
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is SalesPerson);
+                break;
+            case 3:
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is SupportPerson);
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Engineer);
+                break;
+            default:
+                dgEmps.ItemsSource = empList;
+                break;
+            }
+
+            //    if (this.EmployeeTypeRadioButtons.SelectedIndex == 1)
+            //{
+            //    dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Executive);
+            //    dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Manager);
+            //}
+            //else if (this.EmployeeTypeRadioButtons.SelectedIndex == 2)
+            //{
+            //    dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is PTSalesPerson);
+            //    dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is SalesPerson);
+            //}
+            //else if (this.EmployeeTypeRadioButtons.SelectedIndex == 3)
+            //{
+            //    dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is SupportPerson);
+            //    dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Engineer);
+            //}
+            //else dgEmps.ItemsSource = empList;
         }
     }
 }
