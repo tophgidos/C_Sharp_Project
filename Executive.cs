@@ -63,5 +63,8 @@ namespace Employees
                 throw ex;
             }            
         }
-	}
+
+        public override string Role { get { return base.Role + ", " + Title; } }
+        
+    }
 }

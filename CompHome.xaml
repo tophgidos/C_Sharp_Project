@@ -41,7 +41,7 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" MinWidth="45" IsReadOnly="True"/>
                 <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" MinWidth="80" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" MinWidth="80" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Role" Binding="{Binding Role}" MinWidth="85" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Role}" MinWidth="90" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 

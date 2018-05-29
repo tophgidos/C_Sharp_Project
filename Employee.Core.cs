@@ -44,7 +44,7 @@ namespace Employees
         public string SocialSecurityNumber { get { return empSSN; } }
         public DateTime DOB { get { return empDOB; } }
 
-        public virtual string Role { get { return this.GetType().ToString(); } }
+        public virtual string Role { get { return this.GetType().ToString().Substring(10); } }
         #endregion
     }
 }
