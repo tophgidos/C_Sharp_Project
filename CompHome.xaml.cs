@@ -55,8 +55,7 @@ namespace Employees
                 dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is SalesPerson);
                 break;
             case 3:
-                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is SupportPerson);
-                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Engineer);
+                dgEmps.ItemsSource = (List<Employee>)empList.FindAll(obj => obj is Engineer || obj is SupportPerson);
                 break;
             default:
                 dgEmps.ItemsSource = empList;
