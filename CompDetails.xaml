@@ -62,7 +62,7 @@
 
             <!-- SSN -->
             <Label Content="SSN:" Grid.Column="0" Grid.Row="6" Style="{StaticResource labelStyle}"/>
-            <Label Content="{Binding SSN}" Grid.Column="1" Grid.Row="6" Style="{StaticResource labelStyle}"/>
+            <Label Content="{Binding SocialSecurityNumber}" Grid.Column="1" Grid.Row="6" Style="{StaticResource labelStyle}"/>
 
             <!-- Benefits -->
             <Label Content="Benefits:" Grid.Column="0" Grid.Row="7" Style="{StaticResource labelStyle}"/>
@@ -70,7 +70,7 @@
 
             <!-- Stock Options -->
             <Label Content="Stock options:" Grid.Column="0" Grid.Row="8" Style="{StaticResource labelStyle} " Visibility="Hidden"/>
-            <Label Content="{Binding StockOptions}" Grid.Column="1" Grid.Row="8" Style="{StaticResource labelStyle} " Visibility="Hidden"/>
+            <Label Content="{Binding StockOptions}" Grid.Column="1" Grid.Row="8" Style="{StaticResource labelStyle}" Visibility="Hidden"/>
 
             <!-- Reports -->
             <Label Content="Reports:" Grid.Column="0" Grid.Row="9" Style="{StaticResource labelStyle}"  Visibility="Hidden"/>
